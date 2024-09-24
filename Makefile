@@ -57,6 +57,8 @@ LPCISA_OBJ    = helper.o intel.o amd.o main.o
 LPCISA_EXE    = lpcisa.exe
 LPCISAV_EXE   = lpcisav.exe
 
+all:   lpcen.exe lpccmd.exe lpcfchk.exe lpcen2.exe lpccmd2.exe lpcfchk2.exe pcicmd.exe pcidump.exe amdpmcmd.exe gencmd.exe lpcisa.exe lpcisav.exe
+
 lpcen.exe: 
 	$(CL16) $(FLAGS16) -fe=$(LPCEN_EXE) $(LPCEN_FILES)
 
@@ -92,8 +94,6 @@ amdpmcmd.exe:
 
 gencmd.exe:
 	$(CL16) $(FLAGS16) -fe=$(GENCMD_EXE) $(GENCMD_FILES)
-
-all:   lpcen.exe lpccmd.exe lpcfchk.exe lpcen2.exe lpccmd2.exe lpcfchk2.exe pcicmd.exe pcidump.exe amdpmcmd.exe gencmd.exe lpcisa.exe lpcisav.exe
 
 clean: .SYMBOLIC
 	-rm $(LPCEN_OBJ)
